@@ -137,7 +137,7 @@ describe('Unit: models/settings', function () {
             return models.Settings.populateDefaults()
                 .then(() => {
                     const eventsEmitted = eventSpy.args.map(args => args[0]);
-                    const checkEventNotEmitted = event => should.ok(!eventsEmitted.includes(event), `${event} event should be emitted`);
+                    const checkEventNotEmitted = event => should.ok(!eventsEmitted.includes(event), `${event} event should not be emitted`);
                     checkEventNotEmitted('settings.description.added');
                 });
         });
